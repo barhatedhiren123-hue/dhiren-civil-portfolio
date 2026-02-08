@@ -1,0 +1,144 @@
+import { motion } from "framer-motion";
+import { Download, Building2, Hammer, Layers, GraduationCap, Award } from "lucide-react";
+
+export default function Portfolio() {
+  return (
+    <div className="min-h-screen font-serif bg-slate-900 text-slate-100">
+
+      {/* HERO / NAME & CONTACT */}
+      <section className="relative h-screen flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1503387762-592deb58ef4e')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-black/70" />
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center px-6"
+        >
+          <h1 className="text-6xl md:text-7xl font-bold tracking-wide">DHIREN BARHATE</h1>
+          <p className="mt-4 text-xl text-slate-300">Site Engineer | Project Engineer | BIM Exposure</p>
+          <p className="mt-6 text-slate-400">
+            Pune, India · +91-9359830776 · barhatedhiren123@gmail.com
+          </p>
+          <p className="text-slate-400">linkedin.com/in/dhiren-barhate-80a78a147</p>
+
+          <a
+            href="/Dhiren_Barhate_CV.pdf"
+            download
+            className="inline-flex items-center gap-2 mt-10 px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-2xl text-lg shadow-xl"
+          >
+            <Download /> Download CV
+          </a>
+        </motion.div>
+      </section>
+
+      {/* WORK EXPERIENCE */}
+      <section className="max-w-6xl mx-auto px-6 py-24">
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="text-4xl font-semibold mb-12 flex items-center gap-3">
+          <Hammer /> Work Experience
+        </motion.h2>
+
+        <div className="space-y-10">
+          <div className="bg-slate-800 rounded-2xl p-8 shadow-xl">
+            <h3 className="text-2xl font-semibold">Site Engineer</h3>
+            <p className="text-slate-400">Mahalaxmi Builders and Developers · Jalgaon, India</p>
+            <p className="text-slate-500 mb-4">July 2021 – December 2021</p>
+            <ul className="list-disc list-inside text-slate-300 space-y-2">
+              <li>Supervised day-to-day construction activities including groundwork, drainage, and structural works.</li>
+              <li>Ensured execution as per approved drawings, specifications, schedules, and safety standards.</li>
+              <li>Planned daily site activities based on manpower, materials, and work priorities.</li>
+              <li>Maintained DPRs, measurement records, inspection reports, and material approvals.</li>
+              <li>Coordinated with subcontractors, vendors, and site workforce for smooth execution.</li>
+              <li>Supported safety practices including PPE usage, toolbox talks, and incident reporting.</li>
+            </ul>
+          </div>
+
+          <div className="bg-slate-800 rounded-2xl p-8 shadow-xl">
+            <h3 className="text-2xl font-semibold">Civil Engineering & Sustainable Infrastructure Insight (CPD)</h3>
+            <p className="text-slate-400">Curtins · United Kingdom</p>
+            <p className="text-slate-500 mb-4">July 2023 – September 2023</p>
+            <ul className="list-disc list-inside text-slate-300 space-y-2">
+              <li>Supported construction planning, material research, and compliance studies.</li>
+              <li>Gained exposure to BIM workflows, CDM regulations, and QA/QC processes.</li>
+              <li>Assisted in sustainability-focused studies including drainage systems and infrastructure safety.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* SKILLS */}
+      <section className="bg-[url('https://images.unsplash.com/photo-1523413651479-597eb2da0ad6')] bg-cover bg-center relative">
+        <div className="absolute inset-0 bg-slate-900/90" />
+        <div className="relative max-w-6xl mx-auto px-6 py-24">
+          <h2 className="text-4xl font-semibold mb-12 flex items-center gap-3"><Layers /> Skills</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {["Site Supervision & Construction Execution","Drawing Reading & Interpretation","Quality Control & Inspection","Safety Management (PPE, Toolbox Talks)","DPR & Measurement Records","Manpower & Subcontractor Coordination","Material Management","AutoCAD","BIM Collaborate","MS Excel, Word & PowerPoint","Residential & Infrastructure Projects","Work Progress Tracking"].map((skill, i) => (
+              <motion.div key={i} whileHover={{ scale: 1.05 }} className="bg-slate-800 p-6 rounded-xl shadow-lg">
+                {skill}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AUTOCAD DRAWING OVERLAY */}
+      <section className="relative py-24 bg-black">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091215367-59ab6c39a3d6')] bg-cover opacity-20" />
+        <div className="relative max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-semibold mb-10">AutoCAD Drawing Overlay</h2>
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="bg-slate-800 p-8 rounded-2xl">
+            <p className="text-slate-300 mb-4">Experience interpreting structural and layout drawings with focus on accuracy, dimensions, and execution clarity.</p>
+            <p className="text-slate-400">Overlay-style presentation simulating plan reviews and drawing coordination used in EPC projects.</p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* PROJECTS */}
+      <section className="max-w-6xl mx-auto px-6 py-24">
+        <h2 className="text-4xl font-semibold mb-12 flex items-center gap-3"><Building2 /> Project Work</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {["Flood Impacted Bridge Restoration", "Sustainable Brick Development", "Water Treatment Plant Design"].map((title, i) => (
+            <motion.div key={i} whileHover={{ scale: 1.05 }} className="bg-slate-800 rounded-2xl overflow-hidden shadow-xl">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd" className="h-48 w-full object-cover" />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                <ul className="text-slate-300 text-sm list-disc list-inside space-y-1">
+                  <li>Design analysis, methodology evaluation, and constructability review.</li>
+                  <li>Focus on safety, sustainability, and cost optimization.</li>
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* TIMELINE EDUCATION */}
+      <section className="bg-slate-800">
+        <div className="max-w-6xl mx-auto px-6 py-24">
+          <h2 className="text-4xl font-semibold mb-12 flex items-center gap-3"><GraduationCap /> Education Timeline</h2>
+          <div className="space-y-6 text-slate-300">
+            <motion.div whileInView={{ x: 0 }} initial={{ x: -50 }} className="bg-slate-900 p-6 rounded-xl">Diploma in Civil Engineering – MSBTE Maharashtra (2015–2018)</motion.div>
+            <motion.div whileInView={{ x: 0 }} initial={{ x: 50 }} className="bg-slate-900 p-6 rounded-xl">Bachelor of Engineering – Civil Engineering, SPPU (2018–2021)</motion.div>
+            <motion.div whileInView={{ x: 0 }} initial={{ x: -50 }} className="bg-slate-900 p-6 rounded-xl">MSc – Construction Management, University of Birmingham (2022–2023)</motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CERTIFICATIONS */}
+      <section className="max-w-6xl mx-auto px-6 py-24">
+        <h2 className="text-4xl font-semibold mb-12 flex items-center gap-3"><Award /> Certifications</h2>
+        <ul className="grid md:grid-cols-2 gap-6 text-slate-300">
+          <li>PMP – Project Management Professional</li>
+          <li>Level 1 Health & Safety in Construction Environment</li>
+          <li>Level 2 Asbestos Awareness</li>
+          <li>Level 2 Utility Avoidance & Buried Services</li>
+          <li>Level 2 Green Ambassador – Construction Industry</li>
+        </ul>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-black py-10 text-center text-slate-500">
+        © 2026 Dhiren Barhate · Civil / Construction Engineering Portfolio
+      </footer>
+    </div>
+  );
+}
